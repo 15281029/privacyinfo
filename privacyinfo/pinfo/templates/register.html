@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>新用户注册</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript">
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet">
+    <!-- /fonts -->
+    <!-- css -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet" type='text/css' media="all" />
+    <link href="../static/css/register_style.css" rel="stylesheet" type='text/css' media="all" />
+    <!-- /css -->
+</head>
+
+<body>
+    <h1 class="w3ls">新用户注册</h1>
+    <div class="content-agileits">
+        <form action="" method="post" data-toggle="validator" role="form">
+            {% csrf_token %}
+            <div class="">
+                <label for="inputUser" class="control-label">用户名</label>
+                <input type="text" name="username" class="form-control" id="lastname" placeholder="用户名" data-error="该用户名已被注册" required>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="">
+                <label for="inputEmail" class="control-label">Email</label>
+                <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email" data-error="该邮箱已被注册" required>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="">
+                <label for="Phone" class="control-label">电话号码</label>
+                <input type="text" name="phone" class="form-control" id="Phone" placeholder="电话号码" data-error="无效的电话号码" required>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="">
+                <label for="inputPassword" class="control-label">Password</label>
+                <div class="form-inline row">
+                    <div class="form-group col-sm-6">
+                        <input type="password" name="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="请输入密码" required>
+                        <div class="help-block">最短6个字符</div>
+                    </div>
+                    <div class="form-group col-sm-6 w3-agile">
+                        <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="emmm，两次输入的不一样"
+                            placeholder="再次输入密码" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <!-- <button type="submit" class="btn btn-lg">提交</button> -->
+                <button class="btn btn-primary btn-lg" type="submit">提交</button>
+            </div>
+        </form>
+    </div>
+    <!-- /.modal -->
+    <!-- js files -->
+    <script src="../static/js/jquery-1.10.2.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/validator.min.js"></script>
+    <!-- /js files -->
+</body>
+
+</html>
